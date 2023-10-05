@@ -1,0 +1,63 @@
+.modal {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,1);
+  z-index: 10; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  &-content{
+    width: 350px;
+    height: 150px;
+    border-radius: 12px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      width: 100px;
+      height: 600px;
+      background: #05b2e9;
+      position: absolute;
+      animation: border 8s linear infinite;
+    }
+    
+    &::after {
+      content: '';
+      width: 97%;
+      height: 97%;
+      background: #000;
+      position: absolute;
+      border-radius: 12px;
+    }
+  }
+
+  &-title{
+    z-index: 12; 
+    color: white;
+  }
+
+  &-form{
+    z-index: 12; 
+    margin: 10px;
+  }
+}
+
+@keyframes border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

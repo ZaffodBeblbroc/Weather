@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keyworld" content="Прогноз погоды">
+  <meta name="description" content="Погода на неделю, качество воздуха">
+  <meta name="author" content="Тесевич А. Н.">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="scss/style.css">
+  <title>Weather</title>
+</head>
+<body class="body text-bg-dark p-3">
+  <header class="header">
+    <nav class="navbar">
+      <div class="container-fluid">
+        <h1 class="navbar-brand text-warning fs-2 text-uppercase fw-bold">Главней всего погода в доме</h1>
+        <div>
+          <form class="d-flex" role="search">
+            <input class="text form-control me-2 focus-ring focus-ring-warning py-1 px-2 text-decoration-none border rounded-2" type="search" placeholder="Поиск" aria-label="Поиск">
+            <button class="search btn btn-outline-warning" type="submit">Поиск</button>
+          </form>
+          <div class="container-data-time">
+            <p class="data-time fs-6"></p>
+          </div>
+        </div>
+      </div>
+      <button class="day-night">день/ночь</button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="weather item border-top border-warning" id="11">
+      <div class="weather-item">
+        <h2 class="text-uppercase">Текущая погода</h2>  
+        <div class="weather-container">
+          <div class="icon">
+          </div>  
+
+          <div class="weather-temp">
+          </div>
+
+          <div class="weather-list">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="air item border-top border-warning" id="31">
+      <ul class="list-gases vstack gap-3">
+      </ul>
+
+      <div>
+        <p class="air-excellent air-elem close">Отличный! Качество воздуха идеальное для большинства людей; можно проводить время на улице без ограничений.
+          </p>
+        <p class="air-average air-elem close">Средний! Качество воздуха в целом является приемлемым для большинства людей. Однако у людей с повышенной чувствительностью после длительного нахождения на улице могут появляться симптомы малой и средней тяжести.
+          </p>
+        <p class="air-bad air-elem close">Плохой! Загрязнение воздуха достигло высокого уровня, он является небезопасным для людей с повышенной чувствительностью. Если вы почувствуете затрудненное дыхание или раздражение горла, сократите время пребывания на улице.
+          </p>
+        <p class="air-harmful air-elem close">Вредный! Люди с повышенной чувствительностью могут мгновенно почувствовать себя плохо. При продолжительном нахождении на улице здоровые люди могут почувствовать затрудненное дыхание или раздражение горла. Ограничьте пребывание на улице.
+          </p>
+        <p class="air-very-harmful air-elem close">Очень вредный! Люди с повышенной чувствительностью могут мгновенно почувствовать себя плохо, им следует избегать пребывания на улице. У здоровых людей могут возникать симптомы затрудненного дыхания или раздражения горла; рекомендуется оставаться в помещении и перенести мероприятия на улице.
+          </p>
+        <p class="air-dangerous air-elem close">Опасно! Любое пребывание на улице, даже в течение нескольких минут, может привести к серьезным осложнениям у всех. Старайтесь не выходить на улицу.</p>
+      </div>
+    </div>
+
+    <div class="weather-five item border-start border-warning" id="21">
+      <h2 class="text-uppercase">Прогноз на неделю</h2>
+      <div class="list-weather-five">
+
+        <div class="tomorrow">
+          <canvas id="chart-tomorrow"></canvas>
+        </div>
+
+        <div class="after-tomorrow">
+          <canvas id="chart-after-tomorrow"></canvas>
+        </div>
+
+        <div class="day-four">
+          <canvas id="chart-four"></canvas>
+        </div>
+
+        <div class="day-five">
+          <canvas id="chart-five"></canvas>
+        </div>
+
+        <div class="day-six">
+          <canvas id="chart-six"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="request-history item border-top border-warning text-uppercase" id="41">
+      <div class="history-container">
+        <h2>История запросов</h2>        
+        <button class="local btn btn-outline-warning">Очистить</button>
+      </div>
+      <ol class="list-request" data-bs-theme="dark">
+
+      </ol>
+    </div>
+  </main>
+
+  <footer class="footer border-top border-warning">
+    <div>
+      <h1>Подвал</h1>
+      <p>Данные о погоде взяты с сайта <a href="https://openweathermap.org/">https://openweathermap.org/</a></p>
+    </div>
+  </footer>
+
+  <!-- <div class="modal">
+    <div class="modal-content">
+      <h1 class="modal-title tex">Погода</h1>
+      <form class="form modal-form">
+        <input type="text" class="modal-text">
+        <button class="modal-search" type="submit">Поиск</button>
+      </form>
+    </div>
+  </div>
+   -->
+
+
+  <!-- <script src="js/module/Menu.js"></script> -->
+  <!-- <script type="module" src="js/module/Chart.js"></script> -->
+  
+  <script type="module" src="index.js"></script>
+
+</body>
+</html>
