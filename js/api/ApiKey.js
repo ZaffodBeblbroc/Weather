@@ -1,4 +1,4 @@
-const apiKey = "6b515ce6293520402f7cdad455d8e662";
+const apiKey = 
 
 export async function getData(city) {
   const result = await fetch (`http://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&units=metric&appid=${apiKey}`);
