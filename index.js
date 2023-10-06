@@ -33,7 +33,6 @@ const run = async (city) => {
   delItem();
   setLocalStor();
   qwe();
-  console.log(dataAir.list[0].main.aqi);
 }
 
 document.querySelector('.local').addEventListener('click', clearLocalStor);

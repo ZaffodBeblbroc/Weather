@@ -2,6 +2,11 @@
   display: none;
 }
 
+body {
+  max-width: 1400px;
+  margin: 0px auto;
+}
+
 .weather-five {
   margin-left: 10px;
   margin-bottom: 10px;
@@ -34,10 +39,16 @@
   padding: 0px;
 }
 
+.container-fluid {
+  padding: 0px;
+}
 
 @import "dop/_grids";
-// @import "dop/_font";
+@import "dop/_media";
 
+
+
+// @import "dop/_font";
 // @import "dop/_modal";
 
 

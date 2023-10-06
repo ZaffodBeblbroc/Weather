@@ -35,7 +35,7 @@ export class DomHelper {
     return this.createElement({
       tag: 'p',
       classList: ['wind', 'fs-5', 'border-bottom', 'border-warning-subtle'],
-      innerHTML: 'Скорость ветра: ' + `${wind}` + ' м/с',
+      innerHTML: 'Ветер: ' + `${wind}` + ' м/с',
     });
   }
 
@@ -130,7 +130,7 @@ export class DomHelper {
   createRequestItem(value) {
     return this.createElement({
       tag: 'li',
-      classList: ['request-history-item', 'fs-3'],   
+      classList: ['request-history-item', 'fs-3', 'border-bottom', 'border-warning-subtle'],   
       attribute: value,
     });
   }

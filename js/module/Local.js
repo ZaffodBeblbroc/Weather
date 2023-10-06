@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const arrayStore = getLocalStor();
   for (let i = 0; i < arrayStore.length; i++) {
     const item = document.createElement('li');
-    item.classList.add('request-history-item', 'fs-3');
+    item.classList.add('request-history-item', 'fs-3', 'border-bottom', 'border-warning-subtle');
     item.innerHTML = localStorage.getItem(arrayStore[i]);
     item.setAttribute('id', localStorage.key(i))
 
