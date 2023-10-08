@@ -1,4 +1,4 @@
-.close {
+.close-air-quality {
   display: none;
 }
 
@@ -43,13 +43,5 @@ body {
   padding: 0px;
 }
 
-@import "dop/_grids";
+@import "dop/_positioning";
 @import "dop/_media";
-
-
-
-// @import "dop/_font";
-// @import "dop/_modal";
-
-
-

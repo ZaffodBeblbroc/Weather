@@ -19,7 +19,6 @@ export function setLocalStor() {
   for (let i= 0; i < localStorage.length; i++) {
     arrayStor.push(localStorage.key(i));
   }
-  console.log(arrayStor);
   return arrayStor;
 }
 

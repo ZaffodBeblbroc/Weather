@@ -1,4 +1,4 @@
-.close {
+.close-air-quality {
   display: none;
 }
 
@@ -69,13 +69,9 @@ body {
   grid-row: 4/6;
 }
 
-.container-fluid {
-  display: flex;
-  justify-content: space-between;
-}
-
 .weather-container {
   display: flex;
+  justify-content: center;
 }
 
 .history-container {
@@ -91,13 +87,29 @@ body {
   align-items: flex-start;
 }
 
-.request-history-item {
-  display: flex;
-  justify-content: space-between;
-}
-
 .request-history-item p {
   margin: 0px;
+}
+
+.request-history-item {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  left: 95%;
+}
+
+.air {
+  position: relative;
+}
+
+.air-elem {
+  padding: 5px;
+  width: 200px;
+  position: absolute;
+  right: 0px;
+  top: -30px;
 }
 
 @media (max-width: 1200px) {
@@ -153,5 +165,14 @@ body {
   .weather-container {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .container-fluid {
+    justify-content: center !important;
+  }
+  .city {
+    text-align: center;
+  }
+  .air-elem {
+    top: 0px;
   }
 }/*# sourceMappingURL=style.css.map */

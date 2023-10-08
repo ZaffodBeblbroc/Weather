@@ -13,7 +13,7 @@ export class Controller {
     const humidity = this.model.data.list[0].main.humidity;
     const icon = this.model.data.list[0].weather[0].icon;
 
-    this.view.createTemp(temp)
+    this.view.createTemp(temp);
     this.view.createTitle(city);
     this.view.addIcon(icon);
     this.view.createWeather(feels, sky, wind, humidity);
@@ -21,10 +21,6 @@ export class Controller {
     this.view.createRequestHistory(city, temp, sky);
   };
 
-  async createLocalStorage() {
-    this.view.createRequestHistoryLocalStorage(this.model.dataLocalStorage);
-  }
-  
   async air() {
     const air_quality = this.model.dataAir.list[0].main.aqi;
     const co = this.model.dataAir.list[0].components.co;

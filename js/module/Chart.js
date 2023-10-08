@@ -21,49 +21,24 @@ export async function getFive(data) {
         } else if (today.getDate() + 5 === newDay.getDate()) {
             arraySixDay.push(data.list[i].main.temp);
         }  
+      } else {
+        for (let i = 39; i > 0; i++) {
+          let newDay = new Date(data.list[i].dt_txt);
+          if (today.getMonth() !== newDay.getMonth()) {
+            if (newDay.getDate() - 5 === 0) {
+              arraySixDay.push(data.list[i].main.temp);
+            } else if (newDay.getDate() - 4 === 0) {
+              arrayFiveDay.push(data.list[i].main.temp);
+            } else if (newDay.getDate() - 3 === 0) {
+              arrayFourDay.push(data.list[i].main.temp);
+            } else if (newDay.getDate() - 2 === 0) {
+              arrayAfterTomorrow.push(data.list[i].main.temp);
+            } else if (newDay.getDate() -1  === 0) {
+              arrayTomorrow.push(data.list[i].main.temp);
+            }
+          }
+        } 
       }
-
-    // if (today.getMonth() === newDay.getMonth()) {  
-    //   let num = newDay.getDate() - today.getDate();
-    //   switch (num) {
-    //   case 1:
-    //     arrayTomorrow.push(data.list[i].main.temp);
-    //     break;
-    //   case 2:
-    //     arrayAfterTomorrow.push(data.list[i].main.temp);
-    //     break;
-    //   case 3:
-    //     arrayFourDay.push(data.list[i].main.temp);
-    //     break;
-    //   case 4:
-    //     arrayFiveDay.push(data.list[i].main.temp);
-    //     break;
-    //   case 5:
-    //     arraySixDay.push(data.list[i].main.temp);
-    //     break;
-    //   }  
-    // } else {
-    //   switch (newDay.getDate()) {
-    //     case 0:
-    //       arrayTomorrow.push(data.list[i].main.temp);
-    //       break;
-    //     case 1:
-    //       arrayAfterTomorrow.push(data.list[i].main.temp);
-    //       break;
-    //     case 2:
-    //       arrayFourDay.push(data.list[i].main.temp);
-    //       break;
-    //     case 3:
-    //       arrayFiveDay.push(data.list[i].main.temp);
-    //       break;
-    //     case 4:
-    //       arraySixDay.push(data.list[i].main.temp);
-    //       break;
-    //   } 
-    // }
-    // if (i === 39) {
-    //   updateChart(arrayTomorrow, arrayAfterTomorrow, arrayFourDay, arrayFiveDay, arraySixDay);
-    // }
   }
   updateChart(arrayTomorrow, arrayAfterTomorrow, arrayFourDay, arrayFiveDay, arraySixDay);
 }

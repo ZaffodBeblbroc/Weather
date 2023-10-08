@@ -29,13 +29,9 @@
   }
 }
 
-.container-fluid {
-  display: flex;
-  justify-content: space-between;
-}
-
 .weather-container {
   display: flex;
+  justify-content: center;
 }
 
 .history-container {
@@ -51,12 +47,27 @@
   align-items: flex-start;
 }
 
-.request-history-item {
-  display: flex;
-  justify-content: space-between;
-}
-
 .request-history-item p {
   margin: 0px;
 }
 
+.request-history-item {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  left: 95%;
+}
+
+.air { 
+  position: relative;
+}
+
+.air-elem {
+  padding: 5px;
+  width: 200px;
+  position: absolute;
+  right: 0px;
+  top: -30px;
+}

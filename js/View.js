@@ -19,11 +19,11 @@ export class View {
     return document.querySelector('.weather-temp').append(temp);
   }
 
-  createWeather(data3, data4, data5, data6) {
-    const feels = this.domElement.createFeels(data3);
-    const sky = this.domElement.createSky(data4);
-    const wind = this.domElement.createWind(data5);
-    const humidity = this.domElement.createHumidity(data6);
+  createWeather(dataFeels, dataSky, dataWind, dataHumidity) {
+    const feels = this.domElement.createFeels(dataFeels);
+    const sky = this.domElement.createSky(dataSky);
+    const wind = this.domElement.createWind(dataWind);
+    const humidity = this.domElement.createHumidity(dataHumidity);
     if (document.querySelector('.weather-list p')) {
       document.querySelectorAll('.weather-list p').forEach(elem=>{
         elem.remove();
@@ -40,16 +40,16 @@ export class View {
     return document.querySelector('.icon').append(icon);
   } 
 
-  createAir(data, data2, data3, data4, data5, data6, data7, data8, data9) {
-    const air_quality = this.domElement.createAirQuality(data);    
-    const co = this.domElement.createCo(data2);
-    const no = this.domElement.createNo(data3);
-    const no2 = this.domElement.createNo2(data4);
-    const o3 = this.domElement.createO3(data5)
-    const so2 = this.domElement.createSo2(data6);
-    const pm2_5 = this.domElement.createPm2_5(data7);
-    const pm10 = this.domElement.createPm10(data8);
-    const nh3 = this.domElement.createNh3(data9);
+  createAir(dataAirQuality, dataCo, dataNo, dataNo2, dataO3, dataSo2, dataPm2_5, dataPm10, dataNh3) {
+    const air_quality = this.domElement.createAirQuality(dataAirQuality);    
+    const co = this.domElement.createCo(dataCo);
+    const no = this.domElement.createNo(dataNo);
+    const no2 = this.domElement.createNo2(dataNo2);
+    const o3 = this.domElement.createO3(dataO3)
+    const so2 = this.domElement.createSo2(dataSo2);
+    const pm2_5 = this.domElement.createPm2_5(dataPm2_5);
+    const pm10 = this.domElement.createPm10(dataPm10);
+    const nh3 = this.domElement.createNh3(dataNh3);
 
     if (document.querySelector('.list-gases li')) {
       document.querySelectorAll('.list-gases li').forEach(elem=>{
@@ -62,12 +62,10 @@ export class View {
     return document.querySelector('.list-gases').append(co, no, no2, o3, so2, pm2_5, pm10, nh3);
   }
 
-  createRequestHistory(data, data2, data3) {
+  createRequestHistory(city, temp, sky) {
     const value = Math.floor(Math.random() * (9999 - 1000));
-    const item = this.domElement.createRequestItem(value);
-    const text = this.domElement.createRequestItemText(data, data2, data3);
+    const item = this.domElement.createRequestItem(value, city, temp, sky);
     const deleteItem = this.domElement.createRequestDelete();
-    item.append(text);
     item.append(deleteItem);
 
     if(document.querySelectorAll('.list-request li').length < 10) {

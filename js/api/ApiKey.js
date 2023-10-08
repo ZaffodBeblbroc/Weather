@@ -1,9 +1,9 @@
-const apiKey = ;
+// Токен вставить сюда
+const apiKey = "";
 
 export async function getData(city) {
   const result = await fetch (`http://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&units=metric&appid=${apiKey}`);
   const data = await result.json();
-  console.log(data);
   return data;
 }
 

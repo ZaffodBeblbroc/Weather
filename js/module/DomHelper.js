@@ -1,9 +1,9 @@
 export class DomHelper {
   createCity(city) {
     return this.createElement({
-      tag: 'p',
+      tag: 'h1',
       classList: ['city', 'fs-2'],
-      textContent: city,
+      textContent: ` ${city}`,
     });
   }
 
@@ -127,18 +127,14 @@ export class DomHelper {
     });
   }
 
-  createRequestItem(value) {
+
+
+  createRequestItem(value, city, temp, sky) {
     return this.createElement({
       tag: 'li',
       classList: ['request-history-item', 'fs-3', 'border-bottom', 'border-warning-subtle'],   
+      innerHTML: 'Город: ' + city + ' ' + Math.round(`${temp}`) + ' &#8451;' + ' ' + sky,  
       attribute: value,
-    });
-  }
-
-  createRequestItemText(city, temp, sky) {
-    return this.createElement({
-      tag: 'p',
-      innerHTML: 'Город: ' + city + ' ' + Math.round(`${temp}`) + ' &#8451;' + ' ' + sky,      
     });
   }
 
