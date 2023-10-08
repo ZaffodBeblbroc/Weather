@@ -43,6 +43,10 @@ body {
   padding: 0px;
 }
 
+.air-quality {
+  text-decoration-line: underline;
+}
+
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 200px 200px;

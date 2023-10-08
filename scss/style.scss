@@ -43,5 +43,9 @@ body {
   padding: 0px;
 }
 
+.air-quality {
+  text-decoration-line: underline;
+}
+
 @import "dop/_positioning";
 @import "dop/_media";
